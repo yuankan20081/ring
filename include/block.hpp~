@@ -1,0 +1,14 @@
+#pragma once
+
+#include "readwriter.hpp"
+#include <memory>
+
+class Block : public ReadWriter
+{
+public:
+  typedef std::shared_ptr<Block> POINTER;
+  POINTER Next;
+private:
+  char *buf;
+
+};

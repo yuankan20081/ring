@@ -1,0 +1,15 @@
+#pragma once
+
+#include "buffer.hpp"
+#include "block.hpp"
+
+class Ring : public Buffer
+{
+public:
+  Ring(uint32_t node_size);
+  virtual uint32_t Read(char buf[], uint32_t length) override;
+  virtual uint32_t Write(const char data[], uint32_t length) override;
+private:
+  Block::POINTER reader;
+  Block::POINTER writer;
+};
